@@ -15,7 +15,8 @@ if (process.env.BASIC_AUTH_USERNAME) {
 }
 
 server.use(prerender.inMemoryHtmlCache());
-
+server.use(prerender.logger());
+server.use(prerender.httpHeaders());
 //server.use(prerender.blacklist());
 //server.use(prerender.httpHeaders());
 // server.use(prerender.s3HtmlCache());
